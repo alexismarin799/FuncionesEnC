@@ -4,3 +4,8 @@ Comandos de git:
 3 Agregar los archivos nuevos o modificados con git add .(punto)
 4 Hacer commit (git commit -m "mensaje del commit").
 5 Subo todos los commit a git hub con git push.
+
+
+
+
+6 Para actualizar mi carpeta en casa (para no estar clonando todo el tiempo) usar git pull.
