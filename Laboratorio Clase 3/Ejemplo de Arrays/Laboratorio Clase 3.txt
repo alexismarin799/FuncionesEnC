@@ -1,0 +1,8 @@
+ARRAYS
+
+[] determina la cantidad de elementos dentro de un entero, pero no el mayor indice.(ejemplo 3, el elemento 3 no existe)
+listaDeNumeros[3], no es una variable, es una direccion.
+Arrays es un conjunto de datos del mismo tipo.
+Simepre hay que tener una inicializacion de la arrays.
+La mecanica es el for, y cada indice igualar a 0.
+Todos los arrays siempre empiezan en 0.
