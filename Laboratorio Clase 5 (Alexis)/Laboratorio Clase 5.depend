@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1568916391 source:d:\marin alexis\laboratorio clase 5\personas.c
+	"Personas.h"
+
+1568915840 d:\marin alexis\laboratorio clase 5\personas.h
+	<stdio.h>
+
+1568915887 source:d:\marin alexis\laboratorio clase 5\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Personas.h"
+
