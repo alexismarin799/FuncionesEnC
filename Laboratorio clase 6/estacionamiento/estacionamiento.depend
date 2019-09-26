@@ -1,0 +1,27 @@
+# depslib dependency file v1.0
+1569520289 source:d:\marin alexis\estacionamiento\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Estacionamiento.h"
+
+1569520417 source:d:\marin alexis\estacionamiento\estacionamiento.c
+	"Estacionamiento.h"
+
+1569519400 d:\marin alexis\estacionamiento\estacionamiento.h
+	<stdio.h>
+	<string.h>
+
+1569520943 source:d:\marin alexis\laboratorio clase 6\estacionamiento\estacionamiento.c
+	"Estacionamiento.h"
+
+1569519400 d:\marin alexis\laboratorio clase 6\estacionamiento\estacionamiento.h
+	<stdio.h>
+	<string.h>
+
+1569520993 source:d:\marin alexis\laboratorio clase 6\estacionamiento\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Estacionamiento.h"
+
