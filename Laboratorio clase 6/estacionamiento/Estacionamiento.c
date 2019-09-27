@@ -1,5 +1,65 @@
 #include "Estacionamiento.h"
 
+
+void menu(void)
+{
+    sPersona listaDePersonas[P];
+    sVehiculo listaDeVehiculos[V];
+
+    int opcion;
+    int flagMenu = 0;
+
+    do
+    {
+        printf("1-Ingresar personas.\n");
+        printf("2-Ingresar Autos.\n");
+        printf("3-Mostrar personas.\n");
+        printf("4-Mostrar autos con sus respectivos dueños.\n");
+        printf("5-Motrar cantidad de autos de un dueño.\n");
+        printf("6-Mostrar cantidad de autos de personas.\n");
+        printf("7-Salir\n");
+        printf("Ingrese una opcion: ");
+        scanf("%d", & opcion);
+
+        switch(opcion)
+        {
+        case 1:
+            harcodearPersonas(listaDePersonas,P);
+            break;
+
+        case 2:
+            harcodearVehiculos(listaDeVehiculos, V);
+            break;
+
+        case 3:
+            mostrarPersonas(listaDePersonas, P);
+            break;
+
+        case 4:
+            mostrarVehiculos(listaDePersonas,listaDeVehiculos, V);
+            break;
+
+        case 5:
+            ingresoDuenio(listaDePersonas, listaDeVehiculos, V);
+            break;
+
+        case 6:
+            dueniosYAutos(listaDePersonas, listaDeVehiculos, P, V);
+            break;
+
+        case 7:
+            flagMenu = 1;
+            break;
+
+        default:
+            printf("ERROR, ingrese una opcion valida\n");
+        }
+        system("pause");
+        system("cls");
+
+    }while(flagMenu == 0);
+}
+
 void harcodearPersonas(sPersona lista[], int cant)
 {
 
@@ -8,6 +68,7 @@ void harcodearPersonas(sPersona lista[], int cant)
     int dia[]= {33,22,25,11};
     int mes[]= {3,4,12,11};
     int anio[]= {1990,1980,2000,1995};
+    int id[]={100,101,105,106};
     int i;
 
     for(i = 0; i < cant; i++)
@@ -15,7 +76,7 @@ void harcodearPersonas(sPersona lista[], int cant)
         lista[i].fechaNac.dia = dia[i];
         lista[i].fechaNac.mes = mes[i];
         lista[i].fechaNac.anio = anio[i];
-        lista[i].id = i+1;
+        lista[i].id = id[i];
         strcpy(lista[i].nombre, nombre[i]);
 
     }
@@ -34,7 +95,7 @@ void mostrarVehiculos(sPersona persona[], sVehiculo vehiculos[], int cant)
     int i;
     for(i = 0; i < cant; i++)
     {
-        printf("\n Nombre: %s\n", persona[buscarPersonaPorId(persona,vehiculos[i].idDuenio,cant)].nombre);
+        printf("\nNombre: %s\n", persona[buscarPersonaPorId(persona,vehiculos[i].idDuenio,cant)].nombre);
         printf("FechaIngreso: %d/%d/%d\n", vehiculos[i].fechaIngreso.dia, vehiculos[i].fechaIngreso.mes, vehiculos[i].fechaIngreso.anio);
         printf("HoraIngreso: %d\n", vehiculos[i].horaIngreso);
         printf("HoraSalida: %d\n", vehiculos[i].horaSalida);
@@ -44,21 +105,22 @@ void mostrarVehiculos(sPersona persona[], sVehiculo vehiculos[], int cant)
 
 void harcodearVehiculos(sVehiculo vehiculo[], int cant)
 {
-    char patente[][50]= {"AAA 111", "BBB 222", "AA 111 BB", "DJ 222 BB"};
-    int dia[]= {26,26,26,26};
-    int mes[]= {9,9,9,9};
-    int anio[]= {2019,2019,2019,2019};
-    int horaDeIngreso[]= {10,9,8,11};
-    int horaDeSalida[]= {11,11,11,12};
-    int idDuenio[]= {1,2,2,4};
+    char patente[][50]={"AAA111", "BBB222", "AAA222", "WWW777",
+                        "AKK222","EEE111","UUU777","YYY778","ABC123","QQQ128"};
+    int dia={26};
+    int mes={9};
+    int anio={2019};
+    int horaDeIngreso[]={10,9,8,11,10,11,9,7,7,14};
+    int horaDeSalida[]={11,11,11,12,14,15,12,10,11,17};
+    int idDuenio[]={101,106,100,106,101,101,100,105,106,106};
     int i;
 
     for(i = 0; i < cant; i++)
     {
         strcpy(vehiculo[i].patente, patente[i]);
-        vehiculo[i].fechaIngreso.dia = dia[i];
-        vehiculo[i].fechaIngreso.mes = mes[i];
-        vehiculo[i].fechaIngreso.anio = anio[i];
+        vehiculo[i].fechaIngreso.dia = dia;
+        vehiculo[i].fechaIngreso.mes = mes;
+        vehiculo[i].fechaIngreso.anio = anio;
         vehiculo[i].horaIngreso = horaDeIngreso[i];
         vehiculo[i].horaSalida = horaDeSalida[i];
         vehiculo[i].idDuenio = idDuenio[i];
@@ -69,6 +131,7 @@ int buscarPersonaPorId(sPersona persona[], int id, int cant)
 {
     int i;
     int retorno;
+
     for(i = 0; i < cant; i++)
     {
         if(id == persona[i].id)
@@ -78,4 +141,43 @@ int buscarPersonaPorId(sPersona persona[], int id, int cant)
     }
     return retorno;
 
+}
+void ingresoDuenio(sPersona persona[], sVehiculo vehiculo[], int cant)
+{
+    int i;
+    int idDuenio;
+    int flag = 0;
+
+    printf("\nIngrese Duenio: \n");
+    scanf("%d", & idDuenio);
+
+    for(i = 0; i < cant; i++)
+    {
+
+        if(idDuenio == vehiculo[i].idDuenio)
+        {
+            printf("\n%s\n", vehiculo[i].patente);
+            flag = 1;
+        }
+    }
+    if(flag == 0)
+    {
+        printf("No tenes autos\n.");
+    }
+}
+void dueniosYAutos(sPersona personas[], sVehiculo vehiculos[], int cantPersonas, int cantVehivulos)
+{
+    int i;
+    int j;
+    for(i = 0;i < cantPersonas; i ++)
+    {
+        for(j=0; j< cantVehivulos;j++)
+        {
+            if(personas[i].id == vehiculos[j].idDuenio)
+        {
+            printf("\n%s --- %s\n", vehiculos[j].patente, personas[i].nombre);
+        }
+        }
+
+    }
 }

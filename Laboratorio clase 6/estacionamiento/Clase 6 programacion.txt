@@ -1,0 +1,16 @@
+Primariky (PK)
+---------
+
+Identificacion.
+
+Forenky (FK)
+-------
+
+Identificacion secundaria.
+
+
+
+
+fecha.h --> vehiculo.h
+       |		  ---> estacionamiento.h ---> main.	
+	--> propietario.h
