@@ -38,3 +38,7 @@ void mostrarVehiculos(sPersona[], sVehiculo[] ,int);
 int buscarPersonaPorId(sPersona[], int, int);
 void ingresoDuenio(sPersona[], sVehiculo[], int); //FIJATE LA "Ñ" PUTO GENIO
 void dueniosYAutos(sPersona[], sVehiculo[],int,int);
+void ordenarPorNombreYAnio(sPersona[], int);
+void ordenarPorDuenioYPatente(sPersona[],sVehiculo[], int, int);
+void mostrarAutoPorDuenio(sPersona[], sVehiculo[], int);
+void mostrarVehiculo(sVehiculo[], int);
