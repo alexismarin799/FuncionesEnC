@@ -1,0 +1,42 @@
+# depslib dependency file v1.0
+1570714475 source:d:\jugadorequipo2\equipo.c
+	"Equipo.h"
+
+1570714823 d:\jugadorequipo2\equipo.h
+	<stdio.h>
+	<string.h>
+
+1570714574 source:d:\jugadorequipo2\jugador.c
+	"Jugador.h"
+
+1570715027 d:\jugadorequipo2\jugador.h
+	<stdio.h>
+	<string.h>
+	"Fecha.h"
+	"Equipo.h"
+
+1570714791 d:\jugadorequipo2\fecha.h
+	<stdio.h>
+
+1570714653 source:d:\jugadorequipo2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Jugador.h"
+
+1570714921 source:d:\jugadorequipo2\referi.c
+	"Referi.h"
+
+1570715027 d:\jugadorequipo2\referi.h
+	<stdio.h>
+	<string.h>
+	"Fecha.h"
+
+1570714516 source:d:\jugadorequipo2\partido.c
+	"Partido.h"
+
+1570714823 d:\jugadorequipo2\partido.h
+	<stdio.h>
+	<string.h>
+	"Equipo.h"
+	"Referi.h"
+
