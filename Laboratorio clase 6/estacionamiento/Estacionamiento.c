@@ -1,10 +1,25 @@
 #include "Estacionamiento.h"
+/*int incializarPersonas(sPersona persona[], int cant)
+{
+    int retorno = -1;
+    int i;
+    if(cant > 0 && persona != NULL)
+    {
+        for(i = 0; i < cant; i++)
+        {
+            persona[i].espacio = LIBRE;
+        }
+        retorno = 0;
+    }
+    return retorno;
+}*/
 
 
 void menu(void)
 {
     sPersona listaDePersonas[P];
     sVehiculo listaDeVehiculos[V];
+
 
     int opcion;
     int flagMenu = 0;
@@ -38,8 +53,9 @@ void menu(void)
             break;
 
         case 4:
-            ordenarPorDuenioYPatente(listaDePersonas, listaDeVehiculos, P, V);
-            mostrarVehiculos(listaDePersonas,listaDeVehiculos, V);
+            cobrarAuto(listaDeVehiculos, V);
+            /*ordenarPorDuenioYPatente(listaDePersonas, listaDeVehiculos, P, V);
+            mostrarVehiculos(listaDePersonas,listaDeVehiculos, V);*/
             break;
 
         case 5:
@@ -68,6 +84,7 @@ void menu(void)
     }
     while(flagMenu == 0);
 }
+
 
 void harcodearPersonas(sPersona lista[], int cant)
 {
@@ -234,7 +251,7 @@ void ordenarPorDuenioYPatente(sPersona persona[], sVehiculo vehiculo[], int cant
 {
     int i;
     int j;
-    sPersona auxPersona;
+    //sPersona auxPersona;
     sVehiculo auxVehiculo;
 
     for(i = 0; i < cantVehi-1; i ++)
@@ -270,4 +287,46 @@ void mostrarAutoPorDuenio(sPersona persona[], sVehiculo vehiculo[], int cant)
         }
     }
 
+}
+
+void cobrarAuto(sVehiculo vehiculo[],int cant)
+{
+    int i;
+    int laPaga;
+    for(i = 0; i < cant; i++)
+    {
+        laPaga = vehiculo[i].horaSalida - vehiculo[i].horaIngreso;
+        laPaga = laPaga * 100;
+
+        printf("Este auto de patente %s debe %d pesos. \n", vehiculo[i].patente, laPaga);
+    }
+}
+
+/*void dueñoPagaPorAuto(sPersona persona[], sVehiculo vehiculo[], int cant)
+{
+    int i;
+    i = buscarPersonaPorId(persona, vehiculo[i].idDuenio, cant);
+    int debe;
+    debe = cobrarAuto(vehiculo, cant)
+    for(i = 0; i < cant; i++)
+    {
+        printf("%s debe por sus autos estacionados el  total de ")
+    }
+}*/
+
+int soloLetras(char string1[])
+{
+    int i;
+    int largo;
+    int r = -1;
+    largo = strlen(string1);
+    for(i = 1; i < largo; i++)
+    {
+        if(((string1[i]<97 && string1[i]>90)||string1[i]>122)||string1<95)
+        {
+            r = 0;
+            return = r;
+        }
+    }
+    return = r;
 }

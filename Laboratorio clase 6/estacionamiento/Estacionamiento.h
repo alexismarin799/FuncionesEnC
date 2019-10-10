@@ -2,6 +2,8 @@
 #include <string.h>
 #define P 4
 #define V 10
+#define LIBRE 0
+#define OCUPADO 1
 
 typedef struct
 {
@@ -26,10 +28,12 @@ typedef struct
     int id;
     char nombre[50];
     sFecha fechaNac;
+    //int espacio;
 
 
 } sPersona;
 
+//int incializarPersonas(sPersona[], int);
 void menu(void);
 void harcodearPersonas(sPersona[], int);
 void mostrarPersonas(sPersona[], int);
@@ -42,3 +46,6 @@ void ordenarPorNombreYAnio(sPersona[], int);
 void ordenarPorDuenioYPatente(sPersona[],sVehiculo[], int, int);
 void mostrarAutoPorDuenio(sPersona[], sVehiculo[], int);
 void mostrarVehiculo(sVehiculo[], int);
+void cobrarAuto(sVehiculo[],int);
+void dueñoPagaPorAuto(sPersona[], sVehiculo[], int);
+int soloLetras(char[]);

@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include "Estacionamiento.h"
+#define LIBRE 0
+#define OCUPADO 1
 
 
 

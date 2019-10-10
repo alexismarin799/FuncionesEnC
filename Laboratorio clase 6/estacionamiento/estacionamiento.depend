@@ -51,3 +51,16 @@
 	<string.h>
 	"Estacionamiento.h"
 
+1570115989 source:c:\users\alexis\desktop\funcionesenc-master\laboratorio clase 6\estacionamiento\estacionamiento.c
+	"Estacionamiento.h"
+
+1570674842 c:\users\alexis\desktop\funcionesenc-master\laboratorio clase 6\estacionamiento\estacionamiento.h
+	<stdio.h>
+	<string.h>
+
+1570673610 source:c:\users\alexis\desktop\funcionesenc-master\laboratorio clase 6\estacionamiento\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Estacionamiento.h"
+
